@@ -38,8 +38,7 @@ rmw_create_node(
     opendds_identifier,
     // TODO(wjwwood): replace this with RMW_RET_INCORRECT_RMW_IMPLEMENTATION when refactored
     return NULL);
-  return create_node(
-    opendds_identifier, name, namespace_, domain_id, security_options);
+  return create_node(opendds_identifier, name, namespace_, domain_id, security_options);
 }
 
 rmw_ret_t

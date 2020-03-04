@@ -37,14 +37,20 @@ create_node(
   size_t domain_id,
   const rmw_node_security_options_t * security_options)
 {
+  if (!name) {
+		RMW_SET_ERROR_MSG("name is null");
+		return nullptr;
+  }
+  
   if (!security_options) {
     RMW_SET_ERROR_MSG("security_options is null");
     return nullptr;
   }
+	
   DDS::DomainParticipantFactory * dpf_ = TheParticipantFactory;
   if (!dpf_) {
     RMW_SET_ERROR_MSG("failed to get participant factory");
-    return NULL;
+    return nullptr;
   }
 
   // use loopback interface to enable cross vendor communication
