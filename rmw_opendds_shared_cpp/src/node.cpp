@@ -38,10 +38,10 @@ create_node(
   const rmw_node_security_options_t * security_options)
 {
   if (!name) {
-		RMW_SET_ERROR_MSG("name is null");
-		return nullptr;
+    RMW_SET_ERROR_MSG("name is null");
+    return nullptr;
   }
-  
+
   if (!security_options) {
     RMW_SET_ERROR_MSG("security_options is null");
     return nullptr;
